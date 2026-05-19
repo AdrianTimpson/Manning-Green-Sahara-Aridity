@@ -1,0 +1,11 @@
+Focus on the model selection...
+Must consider both the northerly shift from the southern greening, and the southerly shift from the northern greening
+Model comparions of various combinations of horizontal, angled, curved, differing/same rate.
+Not clear how to do the likelihood calculations though.
+Possibly use the worldclim to first explore the boundary shapes by latitude. 
+Probably a double gaussian or something?
+
+Also we need a sytematic method of choosing the hydrosheds catchment level (e.g. 4 or 5)
+Suggest a cross-validation approach - how well does random 80% of data prdict the remaining 20%?
+I.e., the total number of correct catchments. If level is very low, prediction percentage is good, but too few catchments exist.
+If level is too high, prediction becomes bad.
