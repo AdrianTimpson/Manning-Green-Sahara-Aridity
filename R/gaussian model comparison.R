@@ -76,7 +76,7 @@ return(-sum(log(lik)))}
 
 lower <- c(0,-35,-35, 2, 2, 0,  20, -0.01, -0.01, 5000)
 upper <- c(1, 35,  0, 5, 5, 20, 50,  0.01,  0.01, 12000)
-m10 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m10 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date,  tol=1e-10, NP=300)
 
 # model 9a
 obj.fnc <- function(pars, x, y, date){
@@ -95,7 +95,7 @@ return(-sum(log(lik)))}
 
 lower <- c(0,-35,-35, 2, 2,  0, 20, -0.01, 5000)
 upper <- c(1, 35,  0, 5, 5, 20, 50,  0.01, 12000)
-m9a <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m9a <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, tol=1e-10, NP=300)
 
 # model 9b
 obj.fnc <- function(pars, x, y, date){
@@ -114,7 +114,7 @@ return(-sum(log(lik)))}
 
 lower <- c(0,-35,-35, 2,  0, 20, -0.01, -0.01, 5000)
 upper <- c(1, 35,  0, 5, 20, 50,  0.01,  0.01, 12000)
-m9b <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m9b <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, tol=1e-10, NP=300)
 
 # model 8
 obj.fnc <- function(pars, x, y, date){
@@ -133,7 +133,7 @@ return(-sum(log(lik)))}
 
 lower <- c(0,-35,-35, 2,  0, 20, -0.01, 5000)
 upper <- c(1, 35,  0, 5, 20, 50,  0.01, 12000)
-m8 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m8 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
 
 # model 7
 obj.fnc <- function(pars, x, y, date){
@@ -152,7 +152,7 @@ return(-sum(log(lik)))}
 
 lower <- c(0,-35, 2,  0, 20, -0.01, 5000)
 upper <- c(1,  0, 5, 20, 50,  0.01, 12000)
-m7 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m7 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
 
 # model 6
 obj.fnc <- function(pars, x, y, date){
@@ -171,7 +171,7 @@ return(-sum(log(lik)))}
 
 lower <- c(0, 2,  0, 20, -0.01, 5000)
 upper <- c(1, 5, 20, 50,  0.01, 12000)
-m6 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m6 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
 
 # model 5
 obj.fnc <- function(pars, x, y, date){
@@ -185,7 +185,7 @@ return(-sum(log(lik)))}
 
 lower <- c(-35, 2, 0, -0.01, 5000)
 upper <- c(35,  5, 20, 0.01, 12000)
-m5 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m5 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
 
 # model 4
 obj.fnc <- function(pars, x, y, date){
@@ -199,7 +199,7 @@ return(-sum(log(lik)))}
 
 lower <- c(2, 0, -0.01, 5000)
 upper <- c(5, 20, 0.01, 12000)
-m4 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, tol=1e-10, NP=300)
+m4 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
 
 #-----------------------------------------------------------------------------------
 # save(m4,m5,m6,m7,m8,m9a,m9b,m10, file='model results.RData')
