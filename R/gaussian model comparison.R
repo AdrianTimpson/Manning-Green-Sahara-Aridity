@@ -208,16 +208,6 @@ round(m10$par,2)
 #-----------------------------------------------------------------------------------
 # Model comparison
 #-----------------------------------------------------------------------------------
-# AIC
-(2*10)-(2*-m10$value)
-(2*9)-(2*-m9a$value)
-(2*9)-(2*-m9b$value)
-(2*8)-(2*-m8$value)
-(2*7)-(2*-m7$value)
-(2*6)-(2*-m6$value)
-(2*5)-(2*-m5$value)
-(2*4)-(2*-m4$value)
-
 # BIC
 N <- nrow(data)
 (2*10)*log(N)-(2*-m10$value)
@@ -246,8 +236,8 @@ mids <- round((breaks[1:9]+breaks[2:10])/2,-2)
 par(mfrow=c(3,3))
 for(b in 1:9){
 	date <- rep(mids[b],N)
-	#liks <- lik(x, y, date, mixS=p[1], aS=0, aN=0, sdS=p[2], sdN=p[2], yS=p[3], yN=p[4], rS=p[5], rN=-p[5], revD=p[6]) #for model 6
-	liks <- lik(x, y, date, mixS=p[1], aS=p[2], aN=p[3], sdS=p[4], sdN=p[5], yS=p[6], yN=p[7], rS=p[8], rN=-p[9], revD=p[10]) #for model 10
+	liks <- lik(x, y, date, mixS=p[1], aS=0, aN=0, sdS=p[2], sdN=p[2], yS=p[3], yN=p[4], rS=p[5], rN=-p[5], revD=p[6]) #for model 6
+	#liks <- lik(x, y, date, mixS=p[1], aS=p[2], aN=p[3], sdS=p[4], sdN=p[5], yS=p[6], yN=p[7], rS=p[8], rN=-p[9], revD=p[10]) #for model 10
 	pal <- colorRampPalette(c('red','yellow','green','blue'))
 	order <- findInterval(liks, sort(liks))
 	plot(x,y,col=pal(N)[order],pch=16, main=paste(mids[b],'BP'))
@@ -256,31 +246,6 @@ for(b in 1:9){
 	points(sub$Longitude, sub$Latitude)
 	}
 #-----------------------------------------------------------------------------------
-
-N <- 100
-x <- rep(0,N)
-par(mfrow=c(1,2))
-y <- seq(min(ylim),max(ylim),length.out=N)
-dates <- round(seq(14000,p[6],length.out=5),-2) 
-plot(NULL, xlim=ylim, ylim=c(0,0.12),xlab='latitude', ylab='model 6 probability density')
-for(n in 1:5){
-	date <- rep(dates[n],N)
-	liks <- lik(x, y, date, mixS=p[1], aS=0, aN=0, sdS=p[2], sdN=p[2], yS=p[3], yN=p[4], rS=p[5], rN=-p[5], revD=p[6])
-	lines(y,liks,type='l',col=n)
-	}
-legend(x=30,y=0.1, col=1:5, lwd=2, legend=paste(dates,'yBP'),bty='n', cex=0.7)
-
-dates <- round(seq(p[6],2000,length.out=5),-2) 
-plot(NULL, xlim=ylim, ylim=c(0,0.12),xlab='latitude', ylab='model 6 probability density')
-for(n in 1:5){
-	date <- rep(dates[n],N)
-	liks <- lik(x, y, date, mixS=p[1], aS=0, aN=0, sdS=p[2], sdN=p[2], yS=p[3], yN=p[4], rS=p[5], rN=-p[5], revD=p[6])
-	lines(y,liks,type='l',col=n)
-	}
-legend(x=30,y=0.1, col=1:5, lwd=2, legend=paste(dates,'yBP'),bty='n', cex=0.7)
-
-
-
 
 
 
