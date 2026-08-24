@@ -10,7 +10,6 @@ get.hydrology <- function(){
 	# This function hydrology pulls data direct from database, 
 	# cleaning etc, various merges etc
 	require(BIADconnect)
-	source('functions.R')
 
 	# get data from database
 	conn  <-  init.conn(dbname ='greensahara')
@@ -42,7 +41,6 @@ get.animals <- function(){
 	# This function hydrology pulls data direct from database, 
 	# cleaning etc, various merges etc
 	require(BIADconnect)
-	source('functions.R')
 
 	# get data from database
 	d.eco <- query.database("SELECT TaxonCode,WaterCode FROM greensahara.FaunalTaxaList")
@@ -58,9 +56,11 @@ get.animals <- function(){
 
 	d <- d.comb
 
-	# data in study area polygon, excluding nile
-	d <- data.in.polygon(data=d, kml.path='../shapes/study area.kml')
-	nile <- data.in.polygon(data=d, kml.path='../shapes/Nile polygon.kml')
+	# data in study area: within 200mmWclimNAFSAH, plus anything between 10N and 20N, then exclude nile polygon
+	d1 <- data.in.polygon(data=d, kml.path='../shapes/200mmWclimNAFSAH.kml',latcolname='Latitude', longcolname='Longitude', index=1)
+	d2 <- subset(d, Latitude>=10 & Latitude<=20)
+	d <- unique(rbind(d1,d2))
+	nile <- data.in.polygon(data=d, kml.path='../shapes/Nile polygon.kml',latcolname='Latitude', longcolname='Longitude', index=1)
 	d <- d[!d$SiteID%in%nile$SiteID,] 
 return(d)}
 #--------------------------------------------------------------------------------------------------
@@ -75,6 +75,7 @@ make.animal.summary <- function(d){
 
 	for(n in 1:N){
 		sub <- subset(d,PhaseID==phases[n])
+		sub$NISP[is.na(sub$NISP)] <- 0
 		summary$SiteID[n] <- unique(sub$SiteID)
 		summary$PhaseID[n] <- unique(sub$PhaseID)
 		summary$StartBP[n] <- unique(sub$StartBP)
@@ -94,14 +95,14 @@ make.animal.summary <- function(d){
 	cols <- readLines('../tools/colours.txt')
 
 	summary$WDI.mean.col <- convert.stat.to.colours(summary$WDI.mean, cols, v=1:5)
-	summary$Shannon.col <- convert.stat.to.colours(summary$Shannon, rev(cols), v=seq(min(summary$Shannon),max(summary$Shannon),length.out=10))
-	summary$Richness.col <- convert.stat.to.colours(summary$Richness, rev(cols), v=seq(0,max(summary$Richness),length.out=10))
+	summary$Shannon.col <- convert.stat.to.colours(summary$Shannon, rev(cols), v=seq(min(summary$Shannon,na.rm=TRUE),max(summary$Shannon,na.rm=TRUE),length.out=5))
+	summary$Richness.col <- convert.stat.to.colours(summary$Richness, rev(cols), v=seq(0,max(summary$Richness),length.out=5))
 
 	# store summary and raw data	
 	write.csv(summary, file='../tools/animals.summary.csv',row.names=FALSE)
 	write.csv(d, file='../tools/animals.raw.csv',row.names=FALSE)
 
-return(summary)}
+return(NULL)}
 
 #--------------------------------------------------------------------------------------------------
 create.band.key <- function(d, N, direction){
@@ -160,28 +161,32 @@ convert.stat.to.colours <- function(stat, cols, v){
 	x <- pal(length(v))[i]
 return(x)}
 #--------------------------------------------------------------------------------------------------
-data.in.polygon <- function(data,kml.path,polygons=NULL,index=NULL){
+data.in.polygon <- function(data, kml.path, latcolname, longcolname, index=NULL){
 	# returns the data in a particular polygon, use the full kml file path of the polygon
-	# alternatively, if kml.path is NULL, polygons can be used: a list of matrixes of two columns (no names): long,lat
+	# data: the dataframe containing lats and longs
+	# latcolname, longcolname: the column names in the data object that specify latitude and longitude
 	# index: can be used to select particular polygons only in the kml
-	require(maptools)
-	require(splancs)
-	data.region <- NULL
-	if(!is.null(kml.path)&!is.null(polygons))stop('Which one do you want? the kml.path or the polygons? Make one of them NULL')
-	if(is.null(polygons))polygons <- maptools::getKMLcoordinates(kml.path,ignoreAltitude=T)
-	if(is.null(index))index <- 1:length(polygons)
-	for(n in index){
-		polygon <- polygons[[n]]
-		if(!'Longitude'%in%names(data))stop('Longitude is not in the data')		
-		if('Longitude'%in%names(data)){
-			data <- subset(data,!is.na(Longitude))
-			georefs <- splancs::pip(pts=data.frame(x=data$Longitude,y=data$Latitude),poly=polygon,bound=T)
-			index <- data$Longitude%in%georefs$x & data$Latitude%in%georefs$y
-			}
 
-		data.region <- rbind(data.region,data[index,])	
-		}	
+	require(sf)
+	pts <- st_as_sf(data, coords = c(longcolname,latcolname), crs = 4326)
+	polygons <- st_read(kml.path)
+	poly <- st_geometry(polygons)[[index]]
+
+	# remove any duplicated points, except last one
+	i <- !duplicated(poly[[1]])
+	i[length(i)] <- TRUE
+ 	poly[[1]] <- poly[[1]][i,]
+
+	point_indices <- st_intersects(pts, poly)
+	data.region <- data[lengths(point_indices)>0,]
 return(data.region)}
+#--------------------------------------------------------------------------------------------------
+getKMLnames <- function(file){	
+	names <- readLines(file)
+	names <- names[grep('\t\t\t<name>',names)]
+	names <- gsub('\t\t\t<name>','',names)
+	names <- gsub('</name>','',names)
+return(names)}
 #-----------------------------------------------------------------------------------------------
 shannon <- function(x){
 	p <- x/sum(x)
@@ -230,5 +235,5 @@ KEplot <- function(kd, hyd, stat, date, lat, cols,  cor, file, X, Y, txt, stat.p
 	text(x=X[3],y=Y[4], paste("Pearson's R =",round(cor,2)),cex=0.7, pos=2)
 	dev.off()
 	}
-
+#--------------------------------------------------------------------------------------------------
 

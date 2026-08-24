@@ -13,7 +13,7 @@
 # both bands have the same SD
 
 # mS: 0-1 mixture proportion of the southern band (mN must be 1-mS)
-# aS, aN: angle of southern band and northern band from horizontal, in degrees
+# aS, aN: angle of southern band and northern band from vertical, in degrees
 # sdS, sdN: standard deviation of each band, in degrees
 # yS, yN: latitude of each band in degrees, at long=0 (geenwich meridian) at start time (14000yBP)
 # rS, rN: advance/decline rate of each band, degrees per year
@@ -202,9 +202,8 @@ upper <- c(5, 20, 0.01, 12000)
 m4 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
 
 #-----------------------------------------------------------------------------------
-# save(m4,m5,m6,m7,m8,m9a,m9b,m10, file='model results.RData')
-load('model results.RData')
-round(m10$par,2)
+# save(m4,m5,m6,m7,m8,m9a,m9b,m10, file='model comparison results.RData')
+load('model comparison results.RData')
 #-----------------------------------------------------------------------------------
 # Model comparison
 #-----------------------------------------------------------------------------------
@@ -221,7 +220,7 @@ N <- nrow(data)
 #-----------------------------------------------------------------------------------
 # plot best model at various time points
 #-----------------------------------------------------------------------------------
-p <- m6$par # p <- m10$par
+p <- m6$par 
 
 # at 14000BP
 N <- 20000
@@ -246,7 +245,6 @@ for(b in 1:9){
 	points(sub$Longitude, sub$Latitude)
 	}
 #-----------------------------------------------------------------------------------
-
 
 
 

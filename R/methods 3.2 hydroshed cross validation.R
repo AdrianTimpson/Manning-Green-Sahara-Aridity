@@ -2,7 +2,7 @@
 # first look at hydrosheds data
 #-----------------------------------------------------------------------------------------------------------------------------
 # shape files
-files <- list.files('../../data/hydrosheds/hybas_af_lev01-12_v1c',pattern='.shp', full.names=TRUE)
+files <- list.files('../hydrosheds/hybas_af_lev01-12_v1c',pattern='.shp', full.names=TRUE)
 files <- files[!grepl('.xml',files)]
 
 # hydrology
@@ -18,7 +18,7 @@ ylim <- c(10,40)
 
 sf_use_s2(FALSE) # stops errors due to curvature shit
 #-----------------------------------------------------------------------------------------------------------------------------
-# find best catchmentsv
+# find best catchments
 #-----------------------------------------------------------------------------------------------------------------------------
 levels <- 1:6
 N <- length(levels)

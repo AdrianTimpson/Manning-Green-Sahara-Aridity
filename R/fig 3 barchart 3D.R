@@ -2,9 +2,13 @@
 # 3D barplots
 #--------------------------------------------------------------------
 data <- read.csv('../tools/animals.raw.csv')
-range(data$Latitude)
+range(data$StartBP, na.rm=TRUE)
+range(data$EndBP, na.rm=TRUE)
 length(unique(data$PhaseID))
-sum(data$NISP)
+length(unique(data$SiteID))
+sum(data$NISP,na.rm=TRUE)
+
+plot(data$Latitude, data$Longitude)
 #--------------------------------------------------------------------
 # generate summary data
 #--------------------------------------------------------------------
@@ -34,7 +38,7 @@ x <- 1:nrow(wc)
 y <- 1:ncol(wc)
 z <- as.matrix(wc)
 
-pdf(file='../plots/barchart 3D.pdf', width=14, height=7)
+#pdf(file='../plots/barchart 3D.pdf', width=14, height=7)
 par(mar=rep(0.5,4))
 hist3D(	x=x,y=y,z=z*5, col=cols, colvar=colmat, border='grey', 
 		space=c(0.2,0.4), shade=0.3, alpha=0.5,
@@ -48,10 +52,13 @@ text3D(x=rep(0,6), y=rep(0.3,6),  z=seq(0,1,by=0.2)*5, labels=seq(0,100,by=20), 
 text3D(x=5, y=-0.5, z=0, labels='Latitude',add=TRUE, srt=-40, cex=0.8)
 text3D(x=0, y=-0.1, z=0.8, labels='% of site phases',add=TRUE, srt=100, cex=0.8)
 text3D(x=N+1.2, y=1.5, z=0, labels='Water Dependency Index',add=TRUE, srt=45, cex=0.8)
-dev.off()
+#dev.off()
 #--------------------------------------------------------------------
-
-
-
-
+cex <- 1.5
+plot(wc$WDI.1,pch=16, col=cols[1],type='b', ylim=c(0,1),cex=cex,xaxt='n',xlab='Latitude (degrees N)',ylab='% of site phases')
+axis(side=1, at = 1:nrow(wc), labels = row.names(wc))
+lines(wc$WDI.2, pch=16, col=cols[2], type='b',cex=cex)
+lines(wc$WDI.3, pch=16, col=cols[3], type='b',cex=cex)
+lines(wc$WDI.4, pch=16, col=cols[4], type='b',cex=cex)
+lines(wc$WDI.5, pch=16, col=cols[5], type='b',cex=cex)
 

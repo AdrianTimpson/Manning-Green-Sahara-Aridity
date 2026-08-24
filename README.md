@@ -15,5 +15,6 @@ accompanying plots in same folder: manuscript
 ## Post submission 1
 
 manuscript revision and response to reviewers:
-https://docs.google.com/document/d/1exs6f51Vx7INnv\_ZFJ0VQr2itzfqUFrO/edit
+https://docs.google.com/document/d/1exs6f51Vx7INnv_ZFJ0VQr2itzfqUFrO/edit?usp=sharing&ouid=114321686098240584577&rtpof=true&sd=true
+
 
