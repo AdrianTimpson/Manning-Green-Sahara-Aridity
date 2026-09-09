@@ -1,0 +1,1419 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="faunal" id="faunal">
+	<SimpleField name="SiteID" type="string"></SimpleField>
+</Schema>
+<Folder><name></name>
+  <Placemark id="faunal.1">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S002</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>22.0516,32.9</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.2">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S003</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.3225,24.235</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.3">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S005</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.472,25.139</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.4">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S007</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.45,25.1333</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.5">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S009</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.5214,24.538</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.6">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S040</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.6011,24.7686</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.7">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S084</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.5006,24.8686</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.8">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1015</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.53333,17.25</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.9">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1251</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-7.967,18.009</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.10">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1494</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.25,27.4667</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.11">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S151</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.5131,24.8422</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.12">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S152</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.5283,24.8597</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.13">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1708</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>13.533,20.483</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.14">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1715</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.6559,24.516</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.15">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1716</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.6834,24.5683</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.16">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1717</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.5618,24.736</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.17">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1722</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.6035,24.7875</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.18">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1739</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.8,17.33</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.19">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1750</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.267,20.43</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.20">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1760</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.238193,16.8056</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.21">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1761</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.341633,16.8415</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.22">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1762</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.341634,16.8416</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.23">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1763</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.193825,16.9476</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.24">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1764</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.208535,16.9812</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.25">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1765</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.296119,16.733</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.26">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1802</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.49,18.73</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.27">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1809</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.467,18.4583</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.28">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1811</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.5,18.8</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.29">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1812</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-0.68,20.7</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.30">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1813</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-6.92568,33.9525</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.31">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1814</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-0.33,20.1</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.32">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1816</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-6.95369,33.928</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.33">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1830</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-5.3325,35.5115</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.34">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1842</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.004,34.061</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.35">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1849</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.417,19.074</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.36">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1854</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-9.21406,18.3381</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.37">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1855</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-7.23495,16.3265</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.38">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1870</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-16.098,20.14</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.39">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1871</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-16.383,19.8167</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.40">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S1872</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-16.162,23.137</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.41">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S200</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.8786,24.7514</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.42">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S2038</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.1953,17.8193</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.43">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S2325</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-15.2586,18.492</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.44">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S2326</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-15.0114,18.7302</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.45">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S256</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.8364,25.95</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.46">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S265</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.8189,25.9097</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.47">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S267</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.8061,25.8889</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.48">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S269</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>12.8097,25.89</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.49">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S383</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.393,17.564</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.50">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S387</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.7444,17.2923</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.51">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S391</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>32.807,15.603</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.52">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S411</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>35.9578,14.9981</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.53">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S412</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>35.9667,14.9917</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.54">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S417</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.7855,17.5208</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.55">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S424</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>33.393,16.2351</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.56">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S425</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>33.395,16.2365</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.57">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S426</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>32.8275,15.5794</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.58">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S427</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>32.7653,15.4908</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.59">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S438</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.8871,17.5038</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.60">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S445</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.03333,20.3305</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.61">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S447</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.95,20.3</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.62">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S450</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.25,17.4333</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.63">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S451</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.50547,16.9293</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.64">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S452</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.35158,17.7236</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.65">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S453</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.58333,18.6667</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.66">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S454</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.3052,16.997</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.67">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S457</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.3011,16.978</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.68">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S458</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.302,16.9856</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.69">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S459</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.3118,17.0035</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.70">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S460</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.3133,17.0047</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.71">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S462</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.3096,16.977</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.72">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S463</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.62178,17.5558</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.73">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S464</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.73786,17.5759</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.74">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S465</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.75524,17.5951</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.75">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S469</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.18097,20.1748</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.76">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S470</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.41752,17.5961</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.77">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S480</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-16.4503,21.2408</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.78">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S482</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-9.15243,18.3634</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.79">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S483</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-9.20643,18.3638</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.80">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S484</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-9.17169,18.3758</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.81">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S485</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-7.27452,16.7387</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.82">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S487</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-14.7957,19.1908</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.83">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S490</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>1.183,18.767</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.84">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S495</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.237633,16.8447</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.85">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S496</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>0.206638,16.9101</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.86">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S501</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.939,15.124</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.87">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S508</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.1167,24.15</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.88">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S516</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.637,27.404</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.89">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S548</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>33.6333,26.2333</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.90">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S550</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>33.9563,26.2722</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.91">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S556</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>21.2597,17.203</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.92">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S557</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>16.6167,22.6</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.93">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S558</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>17.1333,21.5</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.94">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S560</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>2,22</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.95">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S561</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.16667,33.75</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.96">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S562</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.765,35.1942</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.97">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S563</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.234,22.8825</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.98">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S565</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.09484,35.3522</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.99">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S566</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.08333,34.9167</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.100">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S568</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.5721,36.4467</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.101">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S569</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.84,19.46</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.102">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S570</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>7.68059,35.0418</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.103">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S572</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.69858,36.1867</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.104">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S577</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.3218,23.8836</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.105">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S578</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.03,29.1167</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.106">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S587</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.44895,35.7742</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.107">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S588</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>10.4576,36.0081</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.108">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S589</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.40121,35.7585</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.109">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S596</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.25422,35.2151</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.110">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S597</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-2.493,35.039</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.111">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S598</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-3.28225,34.6978</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.112">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S604</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-5.487,15.358</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.113">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S636</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.3558,17.547</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.114">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S637</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.4229,17.5935</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.115">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S664</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.9927,22.7311</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.116">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S665</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0439,22.7573</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.117">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S666</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0479,22.7609</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.118">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S667</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.1989,22.8407</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.119">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S668</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.2718,22.8142</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.120">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S669</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.917,22.4805</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.121">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S670</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.917,22.482</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.122">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S671</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0777,22.6667</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.123">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S672</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0024,22.789</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.124">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S673</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.078,22.667</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.125">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S674</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0783,22.6672</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.126">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S675</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0825,22.8511</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.127">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S676</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.0831,22.8638</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.128">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S679</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.78,22.85</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.129">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S680</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.744,22.5055</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.130">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S681</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.775,22.5039</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.131">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S682</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7252,22.5103</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.132">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S683</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7689,22.5055</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.133">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S684</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.634,25.4844</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.134">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S685</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.58,22.48</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.135">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S686</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.6354,22.4918</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.136">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S692</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7369,22.522</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.137">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S693</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7453,22.4995</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.138">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S694</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.745,22.4991</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.139">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S695</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7504,22.5165</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.140">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S697</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7294,22.5239</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.141">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S698</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7477,22.5237</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.142">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S700</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.7641,22.5088</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.143">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S708</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.7664,27.3808</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.144">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S709</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.3,22.433</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.145">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S711</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.627,22.195</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.146">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S712</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.617,22.183</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.147">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S714</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.306,22.5986</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.148">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S715</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.307,22.5987</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.149">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S716</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.3074,22.5984</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.150">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S718</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>32.37,15.54</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.151">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S727</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.7744,27.3709</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.152">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S742</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.2428,23.3076</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.153">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S743</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.2763,23.2831</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.154">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S748</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.0102,23.1782</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.155">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S750</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.0117,23.1804</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.156">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S756</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.0154,23.1817</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.157">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S762</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.2774,23.2101</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.158">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S765</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>26.2468,23.2146</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.159">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S773</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.5035,20.443</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.160">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S775</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.6353,27.4345</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.161">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S776</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.8525,26.292</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.162">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S777</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.8468,26.2706</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.163">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S780</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>33.393,16.2357</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.164">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S783</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>17.883,25.781</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.165">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S787</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.498,22.709</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.166">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S795</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.6331,25.0468</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.167">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S800</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.196,25.411</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.168">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S805</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.3632,19.143</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.169">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S806</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.3294,19.1568</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.170">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S807</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>27.2603,19.197</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.171">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S834</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.35,25.41</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.172">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S836</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.35,25.41</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.173">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S838</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>28.806,25.64</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.174">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S839</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.0886,25.4679</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.175">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S840</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.1287,25.4823</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.176">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S841</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.15,25.49</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.177">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S842</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.18,25.46</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.178">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S843</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.2262,25.4566</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.179">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S844</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.11,25.45</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.180">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S845</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.3759,25.4418</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.181">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S846</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.3683,25.4471</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.182">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S847</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.2216,25.4363</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.183">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S848</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.25,25.7</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.184">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S849</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.2502,25.7037</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.185">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S852</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.0971,25.4679</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.186">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S853</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.1019,25.4553</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.187">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S854</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.0812,25.434</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.188">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S855</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.38,25.44</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.189">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S856</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.3899,25.4289</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.190">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S857</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.39,25.43</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.191">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S858</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.33,25.42</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.192">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S859</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.35,25.39</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.193">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S860</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.4085,25.4502</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.194">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S861</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.42,25.36</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.195">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S862</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.4317,25.3645</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.196">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S864</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.43,25.36</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.197">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S865</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.4249,25.3629</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.198">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S866</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.45,25.41</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.199">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S867</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.43,25.39</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.200">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S869</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.34,25.412</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.201">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S870</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>29.341,25.407</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.202">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S876</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>30.6688,24.4887</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.203">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S891</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.29,34.32</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.204">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S894</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.727,36.52</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.205">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S895</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.427,35.391</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.206">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S898</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.50035,16.9353</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.207">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S900</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.50854,16.9325</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.208">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S901</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>9.50681,16.939</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.209">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S915</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>8.77083,17.8472</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.210">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S921</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.567,31.1167</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.211">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S922</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.275,32.0</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.212">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S923</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.23337,31.7834</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.213">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S924</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.175,32.1083</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.214">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S926</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-0.493561,35.8108</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.215">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S927</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.3,30.867</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.216">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S928</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.299,30.866</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.217">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S931</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.07,28.417</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.218">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S932</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.75,31.467</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.219">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S933</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.783,31.529</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.220">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S934</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.783,31.53</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.221">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S935</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.75,31.467</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.222">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S936</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.75,32.138</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.223">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S937</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>3.17,32.1</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.224">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S938</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.361,34.5784</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.225">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S942</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.54,28.44</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.226">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S946</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.73,31.417</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.227">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S947</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.2528,32.0417</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.228">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S948</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.133,31.967</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.229">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S950</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.25294,32.0332</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.230">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S951</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.253,32.032</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.231">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S955</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.14469,34.4594</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.232">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S958</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>5.25,32.03</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.233">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S959</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.583,31.13</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.234">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S960</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.35,30.77</coordinates></Point>
+  </Placemark>
+  <Placemark id="faunal.235">
+	<ExtendedData><SchemaData schemaUrl="#faunal">
+		<SimpleData name="SiteID">S961</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>4.3417,30.73</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

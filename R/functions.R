@@ -4,10 +4,9 @@
 # Functions and overheads
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
-#--------------------------------------------------------------------------------------------------
 get.hydrology <- function(){
 
-	# This function hydrology pulls data direct from database, 
+	# This function pulls hydrology data direct from database, 
 	# cleaning etc, various merges etc
 	require(BIADconnect)
 
@@ -25,15 +24,6 @@ get.hydrology <- function(){
 	d <- subset(d, Method=='C14')
 	i <- which(d$ProxyTypeLezine=='Arid' | d$ProxyTypeSP=='Arid' | d$ProxyTypeOther=='Arid')
 	d <- d[-i,]
-	
-	# data in study area polygon, excluding nile
-	d <- data.in.polygon(data=d,kml.path='../shapes/study area.kml')
-	nile <- data.in.polygon(data=d,kml.path='../shapes/Nile polygon.kml')
-	d <- d[!d$LabCode%in%nile$LabCode,] 
-
-	# rename some columns
-	names(d)[names(d)=='C14Age'] <- 'age'
-	names(d)[names(d)=='C14SD'] <- 'sd'
 return(d)}
 #--------------------------------------------------------------------------------------------------
 get.animals <- function(){
@@ -55,13 +45,6 @@ get.animals <- function(){
 	d.comb <- subset(d.comb, !is.na(WaterCode))
 
 	d <- d.comb
-
-	# data in study area: within 200mmWclimNAFSAH, plus anything between 10N and 20N, then exclude nile polygon
-	d1 <- data.in.polygon(data=d, kml.path='../shapes/200mmWclimNAFSAH.kml',latcolname='Latitude', longcolname='Longitude', index=1)
-	d2 <- subset(d, Latitude>=10 & Latitude<=20)
-	d <- unique(rbind(d1,d2))
-	nile <- data.in.polygon(data=d, kml.path='../shapes/Nile polygon.kml',latcolname='Latitude', longcolname='Longitude', index=1)
-	d <- d[!d$SiteID%in%nile$SiteID,] 
 return(d)}
 #--------------------------------------------------------------------------------------------------
 make.animal.summary <- function(d){
@@ -69,7 +52,7 @@ make.animal.summary <- function(d){
 	# various summary statistics etc
 	phases <- unique(d$PhaseID)
 	N <- length(phases)
-	names <- c('SiteID','PhaseID','StartBP','EndBP','Latitude','Longitude','WDI.mean','Shannon','Richness')
+	names <- c('SiteID','PhaseID','StartBP','EndBP','Latitude','Longitude','WDI.mean','WDI.min','WDI.max','Shannon','Richness')
 	summary <- as.data.frame(matrix(,N,length(names))) 
 	names(summary) <- names
 
@@ -84,6 +67,7 @@ make.animal.summary <- function(d){
 		summary$Longitude[n] <- unique(sub$Longitude)
 		summary$WDI.mean[n] <- mean(as.numeric(sub$WaterCode),na.rm=TRUE) 
 		summary$WDI.min[n] <- min(as.numeric(sub$WaterCode),na.rm=TRUE) 
+		summary$WDI.max[n] <- max(as.numeric(sub$WaterCode),na.rm=TRUE) 
 		summary$Shannon[n] <- shannon(sub$NISP + 1) # add one to deal with presence only
 		summary$Richness[n] <- nrow(sub)
 		}
@@ -161,7 +145,7 @@ convert.stat.to.colours <- function(stat, cols, v){
 	x <- pal(length(v))[i]
 return(x)}
 #--------------------------------------------------------------------------------------------------
-data.in.polygon <- function(data, kml.path, latcolname, longcolname, index=NULL){
+data.in.kml <- function(data, kml.path, latcolname, longcolname, index=NULL){
 	# returns the data in a particular polygon, use the full kml file path of the polygon
 	# data: the dataframe containing lats and longs
 	# latcolname, longcolname: the column names in the data object that specify latitude and longitude
@@ -169,17 +153,11 @@ data.in.polygon <- function(data, kml.path, latcolname, longcolname, index=NULL)
 
 	require(sf)
 	pts <- st_as_sf(data, coords = c(longcolname,latcolname), crs = 4326)
-	polygons <- st_read(kml.path)
-	poly <- st_geometry(polygons)[[index]]
-
-	# remove any duplicated points, except last one
-	i <- !duplicated(poly[[1]])
-	i[length(i)] <- TRUE
- 	poly[[1]] <- poly[[1]][i,]
-
-	point_indices <- st_intersects(pts, poly)
-	data.region <- data[lengths(point_indices)>0,]
-return(data.region)}
+	poly <- st_read(kml.path, crs = 4326)
+	st_agr(pts) <- st_agr(poly) <- 'constant'
+	pts.in.poly <- st_intersection(pts, poly)
+	data.in.poly <- data[row.names(data)%in%row.names(pts.in.poly),]
+return(data.in.poly)}
 #--------------------------------------------------------------------------------------------------
 getKMLnames <- function(file){	
 	names <- readLines(file)

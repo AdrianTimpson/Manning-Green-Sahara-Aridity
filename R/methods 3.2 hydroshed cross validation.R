@@ -1,42 +1,40 @@
 #-----------------------------------------------------------------------------------------------------------------------------
-# first look at hydrosheds data
+# Cross validation method to choosing catchments
 #-----------------------------------------------------------------------------------------------------------------------------
 # shape files
-files <- list.files('../hydrosheds/hybas_af_lev01-12_v1c',pattern='.shp', full.names=TRUE)
+files <- list.files('../../hydrosheds/hybas_af_lev01-12_v1c',pattern='.shp', full.names=TRUE)
 files <- files[!grepl('.xml',files)]
 
 # hydrology
-load('hyd.cal.dates.RData')
-
+load('R objects/hyd.cal.dates.RData')
 
 # unique sites only
 sites <- unique(hyd[,c('Latitude','Longitude')])
+xlim <- c(-19,35)
+ylim <- c(13,37)
 
 library(sf)
-xlim <- c(-20,45)
-ylim <- c(10,40)
-
 sf_use_s2(FALSE) # stops errors due to curvature shit
 #-----------------------------------------------------------------------------------------------------------------------------
 # find best catchments
 #-----------------------------------------------------------------------------------------------------------------------------
 levels <- 1:6
+R <- 1000
 N <- length(levels)
-match <- mismatch <- numeric(N)
-	for(n in 1:N){
+match.025 <- match.500 <- match.975 <- mismatch.025 <- mismatch.500 <- mismatch.975 <- profit.025 <- profit.500 <- profit.975 <- numeric(N)
+for(n in 1:N){
+	match <- mismatch <- profit <- numeric(R)
+	sf <- read_sf(files[n])  
+	# filter the catchments to study area
+	sf <- st_crop(sf, xmin=min(xlim), ymin=min(ylim), xmax=max(xlim), ymax=max(ylim))
 
-		sf <- read_sf(files[n])  
-		# filter the catchments to study area
-		sf <- st_crop(sf, xmin=min(xlim), ymin=min(ylim), xmax=max(xlim), ymax=max(ylim))
-
-
+	for(r in 1:R){
 		# CV. randomly split data into two  sets
 		i <- sample(c(TRUE, FALSE),size = nrow(sites), replace=TRUE)
 		d1 <- sites[i,]
 		d1.sf <- st_as_sf(d1, coords = c("Longitude", "Latitude"), crs = 4326)
 		d2 <- sites[!i,]
 		d2.sf <- st_as_sf(d2, coords = c("Longitude", "Latitude"), crs = 4326)
-
 	
 		# allocate data points to their catchments
 		dd1 <- as.data.frame(st_join(d1.sf, sf))[,'HYBAS_ID']
@@ -45,24 +43,29 @@ match <- mismatch <- numeric(N)
 		# count how many catchment-timebins are active in both d1 and d2
 		dd1 <- unique(dd1[!is.na(dd1)])
 		dd2 <- unique(dd2[!is.na(dd2)])
-		match[n] <- sum(dd1%in%dd2)
+		match[r] <- sum(dd1%in%dd2)
 	
 		# count how many are in one but not the other
-		mismatch[n] <- sum(!dd1%in%dd2) + sum(!dd2%in%dd1)
+		mismatch[r] <- sum(!dd1%in%dd2) + sum(!dd2%in%dd1)
+
+		# count profit
+		profit[r] <- match[r] - mismatch[r]
 		}
+	
+	# store quantiles
+	match.025[n] <- quantile(match, prob=0.025)
+	match.500[n] <- quantile(match, prob=0.5)
+	match.975[n] <- quantile(match, prob=0.975)
+	mismatch.025[n] <- quantile(mismatch, prob=0.025)
+	mismatch.500[n] <- quantile(mismatch, prob=0.5)
+	mismatch.975[n] <- quantile(mismatch, prob=0.975)
+	profit.025[n] <- quantile(profit, prob=0.025)
+	profit.500[n] <- quantile(profit, prob=0.5)
+	profit.975[n] <- quantile(profit, prob=0.975)
+	}
 
-data.frame(level=levels, matches=match, mismatches=mismatch, profit=match-mismatch)
-
-
-plot(sf$geometry)
-points(d1$Longitude, d1$Latitude, pch=16, col=1)
-points(d2$Longitude, d2$Latitude, pch=16, col=2)
-
-library(maps)
-plot(NULL, xlim=xlim, ylim=ylim, frame.plot=FALSE, axes=FALSE, xlab='', ylab='')
-map('world', xlim=xlim, ylim=ylim, col='grey90', add=TRUE, fill=TRUE, border='grey')
-points(d1$Longitude, d1$Latitude, pch=16, col=1)
-points(d2$Longitude, d2$Latitude, pch=16, col=2)
+summary <- data.frame(levels, match.025, match.500, match.975, mismatch.025, mismatch.500, mismatch.975, profit.025, profit.500, profit.975)
+save(summary, file='R objects/catchment.summary.RData')
 #-----------------------------------------------------------------------------------------------------------------------------
 # find best time bins
 #-----------------------------------------------------------------------------------------------------------------------------
@@ -77,7 +80,7 @@ for(w in bw){
 
 # look at level 4
 level <- 4
-R <- 50 
+R <- 1000 
 all.matches <- all.mismatches <- matrix(,N,R)
 for(r in 1:R){
 	
@@ -114,44 +117,25 @@ for(r in 1:R){
 		}
 	}
 
-plot(NULL, xlim=range(bw), ylim=range(all.matches), xlab='time bins (yrs)', ylab='CV matches in same catchment')
-for(r in 1:R)points(bw,all.matches[,r])
-#-----------------------------------------------------------------------------------------------------------------------------
-# plot level 4 for some arbitary time bins
-#-----------------------------------------------------------------------------------------------------------------------------
-data <- hyd
-binwidth <- 500
-level <- 4
-breaks <- unique(c(seq(2000,14000,by=binwidth),14000)) 
-data$timebin <- cut(data$wm.date, breaks, 1:(length(breaks)-1))
-N <- length(breaks)-1
-bin.names <- c()
-for(n in 1:N)bin.names[n] <- paste0(breaks[n]/1000, '-', breaks[n+1]/1000, 'kyrBP')
-sf <- read_sf(files[level])  
-	
-# filter the catchments to study area
-sf <- st_crop(sf, xmin=min(xlim), ymin=min(ylim), xmax=max(xlim), ymax=max(ylim))
-
-pdf(file='../plots/catchments 0.5kyr.pdf', width=14, height=7)
-par(mfrow=c(4,6), mar=c(1,1,1,1))
+# generate a summary of quantiles
+q.025 <- q.500 <- q.975 <- numeric(N)
 for(n in 1:N){
-
-	# plot the overall catchments
-	plot(sf$geometry, main=bin.names[n])
-
-	# get data points in the first time bin
-	sub <- subset(data, timebin==n)
-	d.sf <- st_as_sf(sub, coords = c("Longitude", "Latitude"), crs = 4326)
-
-	# allocate data points to their catchments
-	d <- as.data.frame(st_join(d.sf, sf))[,c('timebin','HYBAS_ID')]
-
-	# colour the catchments
-	d.sub <- subset(sf, HYBAS_ID%in%unique(d$HYBAS_ID))
-	plot(d.sub$geometry, add=TRUE, col='darkseagreen')
-
-	# add the points
-	points(sub$Longitude,sub$Latitude, pch=16, col=1)
+	q.025[n] <- quantile(all.matches[n,], prob=0.025)
+	q.500[n] <- quantile(all.matches[n,], prob=0.500)
+	q.975[n] <- quantile(all.matches[n,], prob=0.975)
 	}
-dev.off()
+
+summary <- data.frame(bw, q.025, q.500, q.975)
+save(summary, file='R objects/timebin.summary.RData')
+
+plot(NULL, xlim=range(bw), ylim=range(all.matches), xlab='time bins (yrs)', ylab='CV matches in same catchment',xaxt='n')
+axis(1,bw,bw,las=2)
+lines(bw,q.025,col='grey')
+lines(bw,q.500,lwd=2)
+lines(bw,q.975,col='grey')
+points(bw,q.500,pch=16)
+points(bw,q.025,pch=16,col='grey')
+points(bw,q.975,pch=16,col='grey')
+legend(x=1800,y=140, pch=c(16,16),col=c('black','grey'),legend=c('median','95% CI'),bty='n')
 #-----------------------------------------------------------------------------------------------------------------------------
+
