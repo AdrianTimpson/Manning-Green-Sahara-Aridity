@@ -49,6 +49,8 @@ return(d)}
 #--------------------------------------------------------------------------------------------------
 make.animal.summary <- function(d){
 
+# MOST OF THIS SHOULD COME OUT!!
+# NOTE ALSO THE PRESENCE HAS DIFFERENT LEVELS|!!
 	# various summary statistics etc
 	phases <- unique(d$PhaseID)
 	N <- length(phases)

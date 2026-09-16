@@ -219,7 +219,7 @@ arch$meanBP <- (arch$StartBP + arch$EndBP)/2
 # store stats for jaccard distance
 jac <- p <- numeric(N)
 
-#pdf(file='../plots/fig S2 catchments slices.pdf', width=16, height=7)
+pdf(file='../plots/fig S2 catchments slices.pdf', width=25, height=10)
 par(mfrow=c(4,6), mar=c(2,2,2,1))
 
 for(n in 1:(N-1)){
@@ -256,22 +256,17 @@ for(n in 1:(N-1)){
 			catchment <- subset(catchments, HYBAS_ID==id)	
 			plot(catchment$geometry, add=TRUE, col='aquamarine', border='grey')
 			}
-		plot(arch.sub$geometry, add=TRUE, col='black', bg='grey', pch=21)
-		plot(fau.sub$geometry, add=TRUE,  col='black', bg=fau.sub$WDI.mean.col, pch=21)
+		plot(arch.sub$geometry, add=TRUE, col='black', bg='grey', pch=21,cex=1.2)
+		plot(fau.sub$geometry, add=TRUE,  col='black', bg=fau.sub$WDI.mean.col, pch=21,cex=1.2)
 		}
 	}
 
 # add legends to last tile
 cols <- readLines('../tools/colours.txt')
 plot(NULL, xlim=c(0,1),ylim=c(0,1),bty='n',xaxt='n',yaxt='n',xlab='',ylab='')
-legend(x=0.5, y=0.5, pch=c(16,16,16,16,16,15), col=c(cols,'black'), legend=paste('WDI', 1:6), bty='n')
-
+legend(x=0, y=1, pch=c(16,16,16,16,16,16,15), cex=1.4, col=c(cols,'grey','aquamarine'), legend=c(paste('WDI =', 1:5),'other archaeology','hydrologically active catchment'), bty='n')
 
 dev.off()
-
-# some faunal arent also arch!!(one spot)
-# therefore overlay is wrong
-# also thereis an error with the subsetting, so need to fix to avoid the loop stopping
 
 # jaccard summary
 jac
