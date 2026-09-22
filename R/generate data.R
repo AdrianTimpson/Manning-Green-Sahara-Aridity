@@ -46,7 +46,7 @@ save(hyd, file='R objects/hyd.cal.dates.RData')
 # faunal data, study area north of 13
 #---------------------------------------------------------------------
 # get all from database
-faunal <- get.animals()
+faunal <- get.faunal()
 
 # subset to study area and period
 i <- which(faunal$StartBP<=14000 & faunal$EndBP>=2000 & faunal$Latitude>=13)
@@ -68,7 +68,7 @@ tmp <- gsub('<name>.*</name>','<name></name>',tmp)
 writeLines(tmp, con=file)
 
 # create faunal summary data in the tools folder
-make.animal.summary(faunal)
+write.csv(faunal, file='../tools/faunal.csv',row.names=FALSE)
 #---------------------------------------------------------------------
 # Archaeological sites (e.g.containing 14C but no faunal), study area north of 13
 # Hydro has no phases, therefore all phases are archaeological

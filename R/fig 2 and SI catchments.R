@@ -4,7 +4,7 @@
 load('R objects/hyd.cal.dates.RData')
 load('R objects/sites.RData')
 load('R objects/arch.phases.RData')
-faunal <- read.csv('../tools/animals.summary.csv')
+faunal <- read.csv('../tools/faunal.csv')
 
 library(sf)
 library(maps)
@@ -66,20 +66,22 @@ catchments$decision <- decision
 catchments <- subset(catchments, decision!='remove')
 
 # assign data types for each site
-sit$faunal <- 0
-sit$faunal[sit$SiteID%in%faunal$SiteID]<- 1
-
-# work out data types for each site
+sit$Faunal <- 0
+sit$Faunal[sit$SiteID%in%faunal$SiteID] <- 1
 sit$class <- NA
-sit$class[sit$Archaeology ==1 & sit$Hydrology==0 & sit$faunal==0] <- 'archaeological'
-sit$class[sit$Archaeology ==0 & sit$Hydrology==1 & sit$faunal==0] <- 'hydrological'
-sit$class[sit$Archaeology ==1 & sit$Hydrology==1 & sit$faunal==0] <- 'mixed'
-sit$class[sit$Archaeology ==1 & sit$Hydrology==0 & sit$faunal==1] <- 'archaeological & faunal'
-sit$class[sit$Archaeology ==0 & sit$Hydrology==1 & sit$faunal==1] <- 'mixed'
-sit$class[sit$Archaeology ==1 & sit$Hydrology==1 & sit$faunal==1] <- 'mixed'
+sit$class[sit$Archaeology ==1 & sit$Hydrology==0 & sit$Faunal==0] <- 'archaeological'
+sit$class[sit$Archaeology ==0 & sit$Hydrology==1 & sit$Faunal==0] <- 'hydrological'
+sit$class[sit$Archaeology ==1 & sit$Hydrology==1 & sit$Faunal==0] <- 'mixed'
+sit$class[sit$Archaeology ==1 & sit$Hydrology==0 & sit$Faunal==1] <- 'archaeological & faunal'
+sit$class[sit$Archaeology ==0 & sit$Hydrology==1 & sit$Faunal==1] <- 'mixed'
+sit$class[sit$Archaeology ==1 & sit$Hydrology==1 & sit$Faunal==1] <- 'mixed'
+
+# assign data types for each site
+arch$class <- 'archaeological'
+arch$class[arch$PhaseID%in%faunal$PhaseID] <- 'archaeological & faunal'
 
 # colours for legend
-leg.cols <- c('green4','red','blue','purple')
+leg.cols <- c('firebrick','tomato','blue','purple')
 classes <- names(table(sit$class))
 class.names <- paste0(classes, ' n=', as.numeric(table(sit$class)))
 
@@ -128,8 +130,6 @@ for(n in 1:N){
 	}
 
 # add hydrology, archaeology and faunal
-
-
 cex <- 0.6
 for(n in 1:length(classes)){
 	sub <- subset(sit, class==classes[n])
@@ -147,6 +147,7 @@ dev.off()
 # plot Fig 3: six timeslices
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
+arch$midBP <- (arch$StartBP + arch$EndBP)/2
 slicewidth <- 2000
 breaks <- unique(c(seq(2000,14000,by=slicewidth),14000)) 
 N <- length(breaks)-1
@@ -157,7 +158,7 @@ nq <- 4
 count.col <- colorRampPalette( cols )(nq+1)
 counts <- 0:nq
 
-pdf(file='../plots/fig 3 catchments slices.pdf', width=14, height=7)
+pdf(file='../plots/fig 3 catchments slices.pdf', width=14, height=6)
 par(mfrow=c(2,3), mar=c(3,3,4,1))
 N <- length(breaks)-1
 for(n in 1:N){
@@ -171,11 +172,11 @@ for(n in 1:N){
 	plot(catchments$geometry, add=TRUE, col='grey90', border='grey')
 
 	# get data points in slice
-	points <- subset(hyd, wm.date>=breaks[n] & wm.date<=breaks[n+1])
-	faun <- subset(faunal, meanBP>=breaks[n] & meanBP<=breaks[n+1])
+	hyd.sub <- subset(hyd, wm.date>=breaks[n] & wm.date<=breaks[n+1])
+	arch.sub <- subset(arch, midBP>=breaks[n] & midBP<=breaks[n+1])
 
-	# count number timeslices each catchment has points in.
-	d <- as.data.frame(st_join(points, catchments))[,c('timebin','HYBAS_ID')]
+	# count number timeslices each catchment has hydrological points in.
+	d <- as.data.frame(st_join(hyd.sub, catchments))[,c('timebin','HYBAS_ID')]
 	tb <- table(unique(d)$HYBAS_ID)
 	tb1 <- data.frame(ID=names(tb), count=as.numeric(tb))
 	tb2 <- data.frame(ID=catchments$HYBAS_ID[!catchments$HYBAS_ID%in%tb1$ID], count=0)
@@ -192,21 +193,23 @@ for(n in 1:N){
 		plot(catchment$geometry, add=TRUE, col=col, border='grey')
 		}
 
-	# add hydrology and faunal
+	# add hydrology, arch and faunal
 	cex <- 0.9
-	points(points, pch=16, col='blue', cex=cex)
-	points(faun, pch=16, col='red', cex=cex)
+	points(hyd.sub, pch=16, col=leg.cols[3], cex=cex)
+	points(subset(arch.sub, class=='archaeological') , pch=16, col=leg.cols[1], cex=cex)
+	points(subset(arch.sub, class=='archaeological & faunal') , pch=16, col=leg.cols[2], cex=cex)
 	}
+
 
 # add legends to last plot
 text(x=28, y=39, labels='Number of 0.5kyr timebins activated',cex=0.9)
 phytools::add.color.bar(leg=30, lims=c(0,nq),cols=count.col, outline=FALSE, prompt=FALSE, digits=2, x=13,y=38,title='',subtitle='',lwd=8) 
-legend(x=18, y=38, pch=16,col=leg.cols[2:3], legend=classes[2:3], bty='n',cex=0.9)
+legend(x=18, y=38, pch=16,col=leg.cols[1:3], legend=classes[1:3], bty='n',cex=0.9)
 
 dev.off()
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
-# plot Fig SI XX: 24 timeslices with faunal and non-hydro sites, and jaccard
+# plot Fig S2: 24 timeslices with faunal and non-hydro sites, and jaccard
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
 slicewidth <- 500
@@ -214,10 +217,9 @@ breaks <- unique(c(seq(2000,14000,by=slicewidth),14000))
 N <- length(breaks)-1
 slice.names <- c()
 for(n in 1:N)slice.names[n] <- paste0(breaks[n]/1000, '-', breaks[n+1]/1000, 'kyrBP')
-arch$meanBP <- (arch$StartBP + arch$EndBP)/2
 
 # store stats for jaccard distance
-jac <- p <- numeric(N)
+jac <- p <- numeric(N-1)
 
 pdf(file='../plots/fig S2 catchments slices.pdf', width=25, height=10)
 par(mfrow=c(4,6), mar=c(2,2,2,1))
@@ -226,10 +228,9 @@ for(n in 1:(N-1)){
 
 	# get data points in slice
 	hyd.sub <- subset(hyd, wm.date>=breaks[n] & wm.date<=breaks[n+1])
-	arch.sub <- subset(arch, meanBP>=breaks[n] & meanBP<=breaks[n+1])
-	fau.sub <- subset(faunal, meanBP>=breaks[n] & meanBP<=breaks[n+1])
+	arch.sub <- subset(arch, midBP>=breaks[n] & midBP<=breaks[n+1])
 
-	# identify which catchments have hydro data and arch
+	# identify which catchments have hydro data, arch data
 	hyd.d <- unique(as.data.frame(st_join(hyd.sub, catchments))[,c('HYBAS_ID')])
 	arch.d <- unique(as.data.frame(st_join(arch.sub, catchments))[,c('HYBAS_ID')])
 
@@ -254,23 +255,25 @@ for(n in 1:(N-1)){
 		if(length(hyd.d)>0){
 			id <- hyd.d[c]
 			catchment <- subset(catchments, HYBAS_ID==id)	
-			plot(catchment$geometry, add=TRUE, col='aquamarine', border='grey')
+			plot(catchment$geometry, add=TRUE, col=cols[3], border='grey')
 			}
-		plot(arch.sub$geometry, add=TRUE, col='black', bg='grey', pch=21,cex=1.2)
-		plot(fau.sub$geometry, add=TRUE,  col='black', bg=fau.sub$WDI.mean.col, pch=21,cex=1.2)
 		}
+	# add hydrology, arch and faunal
+	cex <- 0.9
+	points(hyd.sub, pch=16, col=leg.cols[3], cex=cex)
+	points(subset(arch.sub, class=='archaeological') , pch=16, col=leg.cols[1], cex=cex)
+	points(subset(arch.sub, class=='archaeological & faunal') , pch=16, col=leg.cols[2], cex=cex)
 	}
 
 # add legends to last tile
-cols <- readLines('../tools/colours.txt')
 plot(NULL, xlim=c(0,1),ylim=c(0,1),bty='n',xaxt='n',yaxt='n',xlab='',ylab='')
-legend(x=0, y=1, pch=c(16,16,16,16,16,16,15), cex=1.4, col=c(cols,'grey','aquamarine'), legend=c(paste('WDI =', 1:5),'other archaeology','hydrologically active catchment'), bty='n')
-
+legend(x=0, y=1, pch=16,col=leg.cols[1:3], legend=classes[1:3], bty='n',cex=0.9)
+legend(x=0, y=0.5, pch=15,col=cols[3], legend='hydrologically active catchment', bty='n',cex=0.9)
 dev.off()
 
 # jaccard summary
 jac
 round(p,3)
-
+sum(p<0.02)
 #-----------------------------------------------------------------------------------------------------------------------------
 

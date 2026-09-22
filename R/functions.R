@@ -26,9 +26,9 @@ get.hydrology <- function(){
 	d <- d[-i,]
 return(d)}
 #--------------------------------------------------------------------------------------------------
-get.animals <- function(){
+get.faunal <- function(){
 
-	# This function hydrology pulls data direct from database, 
+	# This function pulls faunal data direct from database, 
 	# cleaning etc, various merges etc
 	require(BIADconnect)
 
@@ -46,50 +46,6 @@ get.animals <- function(){
 
 	d <- d.comb
 return(d)}
-#--------------------------------------------------------------------------------------------------
-make.animal.summary <- function(d){
-
-# MOST OF THIS SHOULD COME OUT!!
-# NOTE ALSO THE PRESENCE HAS DIFFERENT LEVELS|!!
-	# various summary statistics etc
-	phases <- unique(d$PhaseID)
-	N <- length(phases)
-	names <- c('SiteID','PhaseID','StartBP','EndBP','Latitude','Longitude','WDI.mean','WDI.min','WDI.max','Shannon','Richness')
-	summary <- as.data.frame(matrix(,N,length(names))) 
-	names(summary) <- names
-
-	for(n in 1:N){
-		sub <- subset(d,PhaseID==phases[n])
-		sub$NISP[is.na(sub$NISP)] <- 0
-		summary$SiteID[n] <- unique(sub$SiteID)
-		summary$PhaseID[n] <- unique(sub$PhaseID)
-		summary$StartBP[n] <- unique(sub$StartBP)
-		summary$EndBP[n] <- unique(sub$EndBP)
-		summary$Latitude[n] <- unique(sub$Latitude)
-		summary$Longitude[n] <- unique(sub$Longitude)
-		summary$WDI.mean[n] <- mean(as.numeric(sub$WaterCode),na.rm=TRUE) 
-		summary$WDI.min[n] <- min(as.numeric(sub$WaterCode),na.rm=TRUE) 
-		summary$WDI.max[n] <- max(as.numeric(sub$WaterCode),na.rm=TRUE) 
-		summary$Shannon[n] <- shannon(sub$NISP + 1) # add one to deal with presence only
-		summary$Richness[n] <- nrow(sub)
-		}
-	summary$meanBP <- (summary$StartBP + summary$EndBP)/2
-	summary <- subset(summary, !is.na(meanBP))
-
-	# add colour for various stats
-
-	cols <- readLines('../tools/colours.txt')
-
-	summary$WDI.mean.col <- convert.stat.to.colours(summary$WDI.mean, cols, v=1:5)
-	summary$Shannon.col <- convert.stat.to.colours(summary$Shannon, rev(cols), v=seq(min(summary$Shannon,na.rm=TRUE),max(summary$Shannon,na.rm=TRUE),length.out=5))
-	summary$Richness.col <- convert.stat.to.colours(summary$Richness, rev(cols), v=seq(0,max(summary$Richness),length.out=5))
-
-	# store summary and raw data	
-	write.csv(summary, file='../tools/animals.summary.csv',row.names=FALSE)
-	write.csv(d, file='../tools/animals.raw.csv',row.names=FALSE)
-
-return(NULL)}
-
 #--------------------------------------------------------------------------------------------------
 create.band.key <- function(d, N, direction){
 
@@ -167,11 +123,6 @@ getKMLnames <- function(file){
 	names <- gsub('\t\t\t<name>','',names)
 	names <- gsub('</name>','',names)
 return(names)}
-#-----------------------------------------------------------------------------------------------
-shannon <- function(x){
-	p <- x/sum(x)
-	res <- sum(p * log(p)) *(-1)
-return(res)}
 #-----------------------------------------------------------------------------------------------
 KEplot <- function(kd, hyd, stat, date, lat, cols,  cor, file, X, Y, txt, stat.pal, kd.pal){
 
