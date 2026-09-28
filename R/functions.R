@@ -34,7 +34,7 @@ get.faunal <- function(){
 
 	# get data from database
 	d.eco <- query.database("SELECT TaxonCode,WaterCode FROM greensahara.FaunalTaxaList")
-	d.spe <- query.database("SELECT TaxonCode,NISP,PhaseID FROM greensahara.FaunalSpecies")
+	d.spe <- query.database("SELECT TaxonCode,NISP,PhaseID,PresenceOnly FROM greensahara.FaunalSpecies")
 	d.pha <- query.database("SELECT SiteID,PhaseID,StartBP,EndBP FROM greensahara.CommonPhases")
 	d.sit <- query.database("SELECT SiteID,Latitude,Longitude FROM greensahara.CommonSites")
 	disconnect()
@@ -124,47 +124,6 @@ getKMLnames <- function(file){
 	names <- gsub('</name>','',names)
 return(names)}
 #-----------------------------------------------------------------------------------------------
-KEplot <- function(kd, hyd, stat, date, lat, cols,  cor, file, X, Y, txt, stat.pal, kd.pal){
 
-	pdf(file=file,width=13,height=7)
-	par(mar=c(4,4,1,4))
-
-	image(kd, col=colorRampPalette(rev(kd.pal))(30), xlab='yrsBP', ylab='Latitude')
-	points(hyd$wm.date, hyd$Latitude, pch=3, col='grey')
-	points(date, lat, col='black', pch=16, cex=1.3)
-	points(date, lat, col=cols, pch=16)
-
-	# legend is very fiddly
-	stat.inc <- round(seq(min(stat),max(stat),length.out=5),1)
-	stat.cols <- convert.stat.to.colours(stat.inc, col=stat.pal, v=stat.inc)
-
-	kd.inc <- seq(0,1,length.out=20)
-	kd.cols <- convert.stat.to.colours(kd.inc, col=kd.pal, v=kd.inc)
-
-	text(x=X[2],y=Y[1], txt,cex=0.9, pos=2)
-	for (i in 1:length(stat.cols)) {
-	    	y <- Y[1] - (i-1)*0.3
-		points(X[2],y,pch=16,col='black', cex=1.3)
-		points(X[2],y,pch=16,col=stat.cols[i])
-		text(X[3], y, labels=stat.inc[i], cex=0.7, pos=4, offset=0) 
-		}
-
-	text(x=X[2],y=Y[2], 'Hydrological 14C dates',cex=0.9, pos=2)
-	points(x=X[2], y=Y[2], pch=3, col='grey',cex=1.5)
-
-	text(x=X[2],y=Y[3], 'Hydrological 14C density',cex=0.9, pos=2)
-	y.scale <- 15
-	for (i in 1:(length(kd.inc)-1)) {
-	    	y <- Y[3] - (i-1)/y.scale
-		rect(X[2],y,X[3],y-1/y.scale, col=kd.cols[i], border=NA)
-		}
-	rect(X[2],y-1/y.scale,X[3],Y[3],col=NA, border='grey')
-
-	text(x=X[3], y=Y[3], 'high density', cex=0.7, pos=4, offset=0)
-	text(x=X[3], y=y-1/y.scale, 'low density', cex=0.7, pos=4, offset=0)
-
-	text(x=X[3],y=Y[4], paste("Pearson's R =",round(cor,2)),cex=0.7, pos=2)
-	dev.off()
-	}
 #--------------------------------------------------------------------------------------------------
 

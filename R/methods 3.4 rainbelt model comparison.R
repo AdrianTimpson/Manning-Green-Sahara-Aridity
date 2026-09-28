@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------------------------
-# a model of the rainfall as a north band moving down, and a south ban moving up
+# a model of the rainfall as a north band moving down, and a south band moving up
 # should be nested for proper model comparison:
 # always a mixture of two gaussians, such that both bands:
 # have their own angle (from horizontal)
@@ -11,6 +11,7 @@
 # fix angle to zero (shifts are purely north/south)
 # both bands have the same (inverse) advance/decline rate
 # both bands have the same SD
+# only a single rainband from the south
 
 # mS: 0-1 mixture proportion of the southern band (mN must be 1-mS)
 # aS, aN: angle of southern band and northern band from vertical, in degrees
@@ -20,7 +21,7 @@
 # revD: reverse direction date
 #-----------------------------------------------------------------------------------
 # get hydrological data
-load('hyd.cal.dates.RData')
+load('R objects/hyd.cal.dates.RData')
 
 # data should be lat, long, date(BP)
 data <- hyd[,c('Latitude','Longitude','wm.date')]; names(data)[3] <- 'date'
@@ -74,8 +75,8 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
 return(-sum(log(lik)))}
 
-lower <- c(0,-35,-35, 2, 2, 0,  20, -0.01, -0.01, 5000)
-upper <- c(1, 35,  0, 5, 5, 20, 50,  0.01,  0.01, 12000)
+lower <- c(0,  0,-35, 1, 1, 0,  20, -0.01, -0.01, 5000)
+upper <- c(1, 35,  0, 7, 7, 20, 50,  0.01,  0.01, 12000)
 m10 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date,  tol=1e-10, NP=300)
 
 # model 9a
@@ -93,8 +94,8 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
 return(-sum(log(lik)))}
 
-lower <- c(0,-35,-35, 2, 2,  0, 20, -0.01, 5000)
-upper <- c(1, 35,  0, 5, 5, 20, 50,  0.01, 12000)
+lower <- c(0,  0,-35, 1, 1,  0, 20, -0.01, 5000)
+upper <- c(1, 35,  0, 7, 7, 20, 50,  0.01, 12000)
 m9a <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, tol=1e-10, NP=300)
 
 # model 9b
@@ -112,9 +113,28 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
 return(-sum(log(lik)))}
 
-lower <- c(0,-35,-35, 2,  0, 20, -0.01, -0.01, 5000)
-upper <- c(1, 35,  0, 5, 20, 50,  0.01,  0.01, 12000)
+lower <- c(0,  0,-35, 1,  0, 20, -0.01, -0.01, 5000)
+upper <- c(1, 35,  0, 7, 20, 50,  0.01,  0.01, 12000)
 m9b <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, tol=1e-10, NP=300)
+
+# model 9c
+obj.fnc <- function(pars, x, y, date){
+		mixS <- pars[1]
+		aS <- 0
+		aN <- pars[2]
+		sdS <- pars[3]
+		sdN <- pars[4]
+		yS <- pars[5]
+		yN <- pars[6]
+		rS <- pars[7]
+		rN <- pars[8]
+		revD <- pars[9]
+	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
+return(-sum(log(lik)))}
+
+lower <- c(0,-35, 1, 1, 0,  20, -0.01, -0.01, 5000)
+upper <- c(1,  0, 7, 7, 20, 50,  0.01,  0.01, 12000)
+m9c <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date,  tol=1e-10, NP=300)
 
 # model 8
 obj.fnc <- function(pars, x, y, date){
@@ -131,9 +151,9 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
 return(-sum(log(lik)))}
 
-lower <- c(0,-35,-35, 2,  0, 20, -0.01, 5000)
-upper <- c(1, 35,  0, 5, 20, 50,  0.01, 12000)
-m8 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
+lower <- c(0,  0,-35, 1,  0, 20, -0.01, 5000)
+upper <- c(1, 35,  0, 7, 20, 50,  0.01, 12000)
+m8 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, NP=300)
 
 # model 7
 obj.fnc <- function(pars, x, y, date){
@@ -150,9 +170,9 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
 return(-sum(log(lik)))}
 
-lower <- c(0,-35, 2,  0, 20, -0.01, 5000)
-upper <- c(1,  0, 5, 20, 50,  0.01, 12000)
-m7 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
+lower <- c(0,-35, 1,  0, 20, -0.01, 5000)
+upper <- c(1,  0, 7, 20, 50,  0.01, 12000)
+m7 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, NP=300)
 
 # model 6
 obj.fnc <- function(pars, x, y, date){
@@ -169,9 +189,9 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- lik(x, y, date, mixS, aS, aN, sdS, sdN, yS, yN, rS, rN, revD)
 return(-sum(log(lik)))}
 
-lower <- c(0, 2,  0, 20, -0.01, 5000)
-upper <- c(1, 5, 20, 50,  0.01, 12000)
-m6 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
+lower <- c(0, 1,  0, 20, -0.01, 5000)
+upper <- c(1, 7, 20, 50,  0.01, 12000)
+m6 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, NP=300)
 
 # model 5
 obj.fnc <- function(pars, x, y, date){
@@ -183,9 +203,9 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- liksingle(x, y, date, aS, sdS, yS, rS, revD)
 return(-sum(log(lik)))}
 
-lower <- c(-35, 2, 0, -0.01, 5000)
-upper <- c(35,  5, 20, 0.01, 12000)
-m5 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
+lower <- c(0, 1, 0, -0.01, 5000)
+upper <- c(35, 7, 20, 0.01, 12000)
+m5 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, NP=300)
 
 # model 4
 obj.fnc <- function(pars, x, y, date){
@@ -197,21 +217,24 @@ obj.fnc <- function(pars, x, y, date){
 	lik <- liksingle(x, y, date, aS, sdS, yS, rS, revD)
 return(-sum(log(lik)))}
 
-lower <- c(2, 0, -0.01, 5000)
-upper <- c(5, 20, 0.01, 12000)
-m4 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, trace=TRUE, NP=300)
+lower <- c(1, 0, -0.01, 5000)
+upper <- c(7, 20, 0.01, 12000)
+m4 <- JDEoptim(lower=lower, upper=upper, fn=obj.fnc, x=x, y=y, date=data$date, NP=300)
 
 #-----------------------------------------------------------------------------------
-# save(m4,m5,m6,m7,m8,m9a,m9b,m10, file='model comparison results.RData')
-load('model comparison results.RData')
+#save(m4,m5,m6,m7,m8,m9a,m9b,m9c,m10, file='R objects/model comparison results.RData')
+load('R objects/model comparison results.RData')
 #-----------------------------------------------------------------------------------
 # Model comparison
 #-----------------------------------------------------------------------------------
+round(m10$par,3)
+
 # BIC
 N <- nrow(data)
 (2*10)*log(N)-(2*-m10$value)
 (2*9)*log(N)-(2*-m9a$value)
 (2*9)*log(N)-(2*-m9b$value)
+(2*9)*log(N)-(2*-m9c$value)
 (2*8)*log(N)-(2*-m8$value)
 (2*7)*log(N)-(2*-m7$value)
 (2*6)*log(N)-(2*-m6$value)
@@ -220,10 +243,8 @@ N <- nrow(data)
 #-----------------------------------------------------------------------------------
 # plot best model at various time points
 #-----------------------------------------------------------------------------------
-p <- m6$par 
-
 # at 14000BP
-N <- 20000
+N <- 100000
 xlim <- c(-20,45)
 ylim <- c(10,37)
 x <- runif(N, min(xlim),max(xlim))
@@ -235,8 +256,7 @@ mids <- round((breaks[1:9]+breaks[2:10])/2,-2)
 par(mfrow=c(3,3))
 for(b in 1:9){
 	date <- rep(mids[b],N)
-	liks <- lik(x, y, date, mixS=p[1], aS=0, aN=0, sdS=p[2], sdN=p[2], yS=p[3], yN=p[4], rS=p[5], rN=-p[5], revD=p[6]) #for model 6
-	#liks <- lik(x, y, date, mixS=p[1], aS=p[2], aN=p[3], sdS=p[4], sdN=p[5], yS=p[6], yN=p[7], rS=p[8], rN=-p[9], revD=p[10]) #for model 10
+	liks <- lik(x, y, date, mixS=p[1], aS=0, aN=p[2], sdS=p[3], sdN=p[4], yS=p[5], yN=p[6], rS=p[7], rN=p[8], revD=p[9]) #for model 9c
 	pal <- colorRampPalette(c('red','yellow','green','blue'))
 	order <- findInterval(liks, sort(liks))
 	plot(x,y,col=pal(N)[order],pch=16, main=paste(mids[b],'BP'))
