@@ -141,6 +141,12 @@ text(x=39, y=39, labels='Number of 0.5kyr timebins activated',cex=0.7)
 phytools::add.color.bar(leg=10, lims=range(counts),cols=count.col, outline=FALSE, prompt=FALSE, digits=2, x=34,y=38.4,title='',subtitle='',lwd=10) 
 legend(x=36, y=38, pch=16,col=leg.cols, legend=class.names, bty='n',cex=0.7)
 
+# add corridor text
+text(x=-0.3,y=30, labels='Saoura river corridor', srt=-60)
+text(x=8.8,y=28, labels='Irharhar river corridor', srt=60)
+text(x=19.5,y=24, labels='Behar Belama river corridor', srt=60)
+text(x=33,y=25, labels='Nile river corridor', srt=-70)
+
 dev.off()
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
