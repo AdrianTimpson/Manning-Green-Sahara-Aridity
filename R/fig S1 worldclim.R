@@ -1,7 +1,7 @@
 #---------------------------------------------------------------
 # aggregate worldclim over several years to provide average rainfall
 #---------------------------------------------------------------
-folder <- 'wc2.1_cruts4.09_10m_prec_1950-1959'
+folder <- '../../worldclim/wc2.1_cruts4.09_10m_prec_1950-1959'
 files <- list.files(folder, full.names=TRUE, pattern='.tif')
 
 library(terra)
