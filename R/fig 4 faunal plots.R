@@ -86,7 +86,7 @@ summary$meanBP <- (summary$StartBP + summary$EndBP)/2
 summary <- subset(summary, !is.na(meanBP))
 
 # generate continuous colours for WDI.mean
-summary$WDI.mean.col <- convert.stat.to.colours(summary$WDI.mean, cols, v=seq(1,5,length.out=20))
+summary$WDI.mean.col <- convert.stat.to.colours(summary$WDI.mean, cols, v=seq(min(summary$WDI.mean),max(summary$WDI.mean),length.out=20))
 
 # save summary for other purposes
 write.csv(summary, file='../tools/faunal phases.csv', row.names=FALSE)
