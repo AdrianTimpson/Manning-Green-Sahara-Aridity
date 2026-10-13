@@ -41,6 +41,7 @@ kd.inc <- seq(0,1,length.out=20)
 kd.cols <- convert.stat.to.colours(kd.inc, col=kd.pal, v=kd.inc)
 cor <- cor(faunal$WDI.mean, faunal$kd.value)
 cor.test(faunal$WDI.mean, faunal$kd.value)
+cor
 #------------------------------------------------------------------------------------------------------------
 # plot
 #------------------------------------------------------------------------------------------------------------
