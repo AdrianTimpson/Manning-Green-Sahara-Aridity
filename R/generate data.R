@@ -4,7 +4,7 @@
 # Will not work without access to database!! 
 #---------------------------------------------------------------------
 source('functions.R')
-require(BIADconnect)
+library(BIADconnect)
 #---------------------------------------------------------------------
 # hydrological 14C dates
 #---------------------------------------------------------------------
@@ -49,13 +49,10 @@ save(hyd, file='R objects/hyd.cal.dates.RData')
 faunal <- get.faunal()
 
 # subset to study area and period
-i <- which(faunal$StartBP<=14000 & faunal$EndBP>=2000 & faunal$Latitude>=13)
+i <- which(faunal$GMM<=14000 & faunal$GMM>=2000 & faunal$Latitude>=13)
 faunal <- faunal[i,]
 nile <- data.in.kml(data=faunal,kml.path='../shapes/Nile polygon.kml',latcolname='Latitude', longcolname='Longitude',index=1)
 faunal <- faunal[!row.names(faunal)%in%row.names(nile),]
-
-# mid date
-faunal$midBP <- (faunal$StartBP + faunal$EndBP)/2
 
 # create a kml of points
 file <- "../shapes/faunal_sites.kml"
@@ -74,11 +71,11 @@ write.csv(faunal, file='../tools/faunal.csv',row.names=FALSE)
 # Hydro has no phases, therefore all phases are archaeological
 #---------------------------------------------------------------------
 sit <- query.database("SELECT SiteID,Latitude,Longitude FROM greensahara.CommonSites WHERE Archaeology='1'")
-pha <- query.database("SELECT SiteID,PhaseID,StartBP,EndBP FROM greensahara.CommonPhases")
+pha <- query.database("SELECT SiteID,PhaseID,GMM FROM greensahara.CommonPhases")
 pha <- merge(pha,sit,all.x=TRUE,all.y=FALSE)
 disconnect()
 # subset to study area and period
-i <- which(pha$StartBP<=14000 & pha$EndBP>=2000 & pha$Latitude>=13)
+i <- which(pha$GMM <=14000 & pha$GMM>=2000 & pha$Latitude>=13)
 pha <- pha[i,]
 nile <- data.in.kml(data=pha,kml.path='../shapes/Nile polygon.kml',latcolname='Latitude', longcolname='Longitude',index=1)
 arch <- pha[!row.names(pha)%in%row.names(nile),]

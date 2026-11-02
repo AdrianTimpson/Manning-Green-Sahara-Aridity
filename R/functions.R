@@ -35,7 +35,7 @@ get.faunal <- function(){
 	# get data from database
 	d.eco <- query.database("SELECT TaxonCode,WaterCode FROM greensahara.FaunalTaxaList")
 	d.spe <- query.database("SELECT TaxonCode,NISP,PhaseID,PresenceOnly FROM greensahara.FaunalSpecies")
-	d.pha <- query.database("SELECT SiteID,PhaseID,StartBP,EndBP FROM greensahara.CommonPhases")
+	d.pha <- query.database("SELECT SiteID,PhaseID,StartBP,EndBP,GMM,GMS FROM greensahara.CommonPhases")
 	d.sit <- query.database("SELECT SiteID,Latitude,Longitude FROM greensahara.CommonSites")
 	disconnect()
 

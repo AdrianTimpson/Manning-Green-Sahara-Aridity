@@ -153,7 +153,6 @@ dev.off()
 # plot Fig 2B: six timeslices
 #-----------------------------------------------------------------------------------------------------------------------------
 #-----------------------------------------------------------------------------------------------------------------------------
-arch$midBP <- (arch$StartBP + arch$EndBP)/2
 slicewidth <- 2000
 breaks <- unique(c(seq(2000,14000,by=slicewidth),14000)) 
 N <- length(breaks)-1
@@ -179,7 +178,7 @@ for(n in 1:N){
 
 	# get data points in slice
 	hyd.sub <- subset(hyd, wm.date>=breaks[n] & wm.date<=breaks[n+1])
-	arch.sub <- subset(arch, midBP>=breaks[n] & midBP<=breaks[n+1])
+	arch.sub <- subset(arch, GMM>=breaks[n] & GMM<=breaks[n+1])
 
 	# count number timeslices each catchment has hydrological points in.
 	d <- as.data.frame(st_join(hyd.sub, catchments))[,c('timebin','HYBAS_ID')]
@@ -234,7 +233,7 @@ for(n in 1:(N-1)){
 
 	# get data points in slice
 	hyd.sub <- subset(hyd, wm.date>=breaks[n] & wm.date<=breaks[n+1])
-	arch.sub <- subset(arch, midBP>=breaks[n] & midBP<=breaks[n+1])
+	arch.sub <- subset(arch, GMM>=breaks[n] & GMM<=breaks[n+1])
 
 	# identify which catchments have hydro data, arch data
 	hyd.d <- unique(as.data.frame(st_join(hyd.sub, catchments))[,c('HYBAS_ID')])
@@ -280,5 +279,5 @@ dev.off()
 # jaccard summary
 jac
 round(p,3)
-sum(p<0.02)
+sum(p<0.05)
 #-----------------------------------------------------------------------------------------------------------------------------

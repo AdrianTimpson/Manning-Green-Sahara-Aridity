@@ -25,7 +25,7 @@ kd$z <- sqrt(kd$z)
 #------------------------------------------------------------------------------------------------------------
 N <- nrow(faunal)
 for(n in 1:N){
-	x.dist <- abs(kd$x-faunal$meanBP[n])
+	x.dist <- abs(kd$x-faunal$GMM[n])
 	x.i <- which(x.dist==min(x.dist))
 	y.dist <- abs(kd$y-faunal$Latitude[n])
 	y.i <- which(y.dist==min(y.dist))
@@ -51,8 +51,8 @@ par(mar=c(4,4,1,4))
 image(kd, col=colorRampPalette(rev(kd.pal))(30), xlab='yrsBP', ylab='Latitude')
 axis(2, at=13:37, labels=FALSE)
 points(hyd$wm.date, hyd$Latitude, pch=3, col='grey')
-points(faunal$meanBP, faunal$Latitude, col='black', pch=16, cex=1.3)
-points(faunal$meanBP, faunal$Latitude, col=cols, pch=16)
+points(faunal$GMM, faunal$Latitude, col='black', pch=16, cex=1.3)
+points(faunal$GMM, faunal$Latitude, col=cols, pch=16)
 
 # legend is very fiddly
 X <- c(10500,12700,13000)
